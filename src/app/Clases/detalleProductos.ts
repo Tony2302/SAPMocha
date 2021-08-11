@@ -5,7 +5,8 @@ export interface detalleCategorias{
 idDetalleCategorias :number;
 stock:number;
 precioUnidad:number;
-precioDocena:number;
+//precioDocena:number;
+entrega:number;
 idProductos:Productos;
 productos:Productos;
 idProductores:number;

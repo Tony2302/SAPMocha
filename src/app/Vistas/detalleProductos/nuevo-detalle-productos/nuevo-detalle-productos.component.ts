@@ -22,19 +22,19 @@ export class NuevoDetalleProductosComponent implements OnInit {
     idProductos: new FormControl(null, Validators.required),
     stock: new FormControl('',[validate.valor]),
     precioUnidad: new FormControl('', [validate.valor]),
-    precioDocena: new FormControl('', [validate.valor]),
+    entrega: new FormControl(null, [Validators.required]),
+    //precioDocena: new FormControl('', [validate.valor]),
     idProductores: new FormControl(null, Validators.required),
-
-
   });
 
+  ListaEntregas = ['Centro de acopio', 'Recolector', 'Consumo'];
 
   productorObj: Productores[] = [];
   productosObj: Productos[] = [];
   idDetalle:number=0;
   numero:number=1;
 
-  constructor(   private config: NgSelectConfig,  private detalleCategoria: DetalleCategoriasService, private ra:ActivatedRoute,private router:Router) { 
+  constructor(   private config: NgSelectConfig,  private detalleCategoria: DetalleCategoriasService, private ra:ActivatedRoute,private router:Router) {
 
 
 
@@ -72,17 +72,17 @@ export class NuevoDetalleProductosComponent implements OnInit {
 
 
 
-   
 
 
 
 
 
 
+    console.log(pro);
     if(this.proved.invalid)
     {
 
-     
+
       Swal.fire('Productos-Proveedores','Todos los campos son requeridos','warning');
 
       return
@@ -93,13 +93,13 @@ export class NuevoDetalleProductosComponent implements OnInit {
 
     {
 
-    
+
 
 
 
        this.detalleCategoria.nuevo(pro).subscribe(res=>{
 
-        
+
         Swal.fire({
           position: 'center',
           icon: 'success',
@@ -122,35 +122,35 @@ export class NuevoDetalleProductosComponent implements OnInit {
       {
 
         pro.idDetalleCategorias = this.idDetalle;
-       
-  
-  
-  
-  
+
+
+
+
+
         this.detalleCategoria.editar(this.idDetalle, pro).subscribe(res => {
-  
+
           Swal.fire({
             position: 'center',
             icon: 'success',
             title: 'Editado con exito',
             showConfirmButton: false,
             timer: 1500,
-  
-  
-  
+
+
+
           })
-  
+
           this.router.navigate(['/menu/listarDetalle']);
-  
+
         }, error => console.log(error))
-           
+
 
       }
-     
+
   }
 
 
-  
+
   listarProductos() {
 
     // this.spinner = 1;
@@ -160,7 +160,7 @@ export class NuevoDetalleProductosComponent implements OnInit {
       this.productosObj = res;
 
 
-  
+
       // this.spinner = 0;
 
 
@@ -209,7 +209,7 @@ export class NuevoDetalleProductosComponent implements OnInit {
 
 
 
-  
+
   cargar(id: number) {
 
 

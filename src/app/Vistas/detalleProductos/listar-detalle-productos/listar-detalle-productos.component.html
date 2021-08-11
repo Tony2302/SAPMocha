@@ -15,16 +15,16 @@
 
 
 
- 
 
 
-    
+
+
     <div class="container">
         <div class="text-uppercase text-center pt-3 pb-2 ">
             <h3 style="font-weight: bold;">Nuevo Producto-Proveedores</h3>
         </div>
     </div>
-    
+
 
 
 
@@ -75,7 +75,9 @@
                     <td>Producto</td>
                     <td>Cantidad</td>
                     <td>P.V.P Unidad</td>
+                    <!--
                     <td>P.V.P Docena </td>
+                    -->
                     <td>Productor</td>
                     <td>Opciones</td>
 
@@ -85,8 +87,8 @@
                 </tr>
             </thead>
 
-                                  
-             
+
+
 
             <tbody *ngFor="let item of detalleCategoriaList; let i=index;">
                 <tr class="text-dark webkit-scrollbar," class="text-dark">
@@ -98,7 +100,9 @@
                     <td>{{item.productos.nombreProducto}}</td>
                     <td>{{item.stock}} </td>
                     <td>{{item.precioUnidad}}</td>
+                    <!--
                     <td>{{item.precioDocena}}</td>
+                    -->
                     <td>{{item.productores.nombres}} {{item.productores.apellidos}}</td>
                     <td class="text-center ">
                         <div class="btn-group dropdown " role="group" aria-label="Button group with nested dropdown">
@@ -127,13 +131,13 @@
                             </div>
                         </div>
                     </td>
-               
+
 
 
 
                 </tr>
 
-            
+
 
 
 
@@ -141,7 +145,7 @@
             </tbody>
 
             <tbody *ngIf="this.detalleCategoriaList.length==0">
-               
+
                 <tr><td  class='text-center' colspan='7'>No existen Registros   </td> </tr>
 
             </tbody>

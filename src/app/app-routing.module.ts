@@ -32,15 +32,14 @@ const routes: Routes = [
 
 
   { path:'listarProveedor', component:ListarProductoresComponent},
-  { path:'nuevoProveedor', component:NuevoProductoresComponent},
+
   { path:'editarProveedor/:id', component:NuevoProductoresComponent},
 
-  { path:'productos', component:ProductosComponent},
-
   { path:'listarDetalle', component:ListarDetalleProductosComponent},
-  { path:'nuevoDetalle', component:NuevoDetalleProductosComponent},
   { path:'editarDetalle/:id', component:NuevoDetalleProductosComponent},
-
+  { path:'productos', component:ProductosComponent},
+  { path:'nuevoProveedor', component:NuevoProductoresComponent},
+  { path:'nuevoDetalle', component:NuevoDetalleProductosComponent},
 
 
 
